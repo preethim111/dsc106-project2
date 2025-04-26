@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Assignment 4</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Preethi Manne</strong> — <em>pmanne@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2>Proposition: The trend of male complaints vs. female complaints is drastically different as there is a much sharper increasing trend in the number of male complaints as compared to that of female complaints.</h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="persuasive.png" alt="" width="900"/>
+          <!-- <figcaption>BRIEF CAPTION HERE.</figcaption> -->
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>
+            <p><strong>Textual Content -</strong> In the title of the graph, I said, “Is There a Sharp Increase in Male Complaints Compared to Female Complaints (2000-2012)?” By using the phrase “sharp increase in male complaints” title, I am already getting my viewers to think about my proposition that there IS a sharper increasing trend in the number of male complaints as compared to that of female complaints. I am guiding them in that direction, and after reading that title and taking a look at my graph, they could easily answer that question with a YES.</p>
+            <p><em>Earnesty Score: -0.5</em></p>
+          </li>
+        
+          <li>
+            <p><strong>Data Filtering -</strong> In the dataset, there is data that was recorded until the year 2020. However, after plotting all the years on the line chart during my development process, I noticed that from the years 2012 to 2020, there is a declining trend in both the number of male and female complaints given against NYPD officers. Since my proposition is that “There is a much sharper increasing trend in the number of male complaints as compared to that of female complaints,” I did not include the data recorded in the years 2012 to 2020. From 2000 to 2012, the data showed an increasing trend, so I only represented those data points in my line chart.</p>
+            <p><em>Earnesty Score: -1.5</em></p>
+          </li>
+        
+          <li>
+            <p><strong>Color decisions -</strong> The two lines on my line chart represent the female and male population. Therefore, for the female line, I used a pink color as pink is commonly associated with femininity and women. And for the male line, I used a dark blue color as that is commonly associated with men. It was not necessarily as directly persuasive in supporting my proposition, but these color choice designs definitely make comparison easier on the readers’ eyes as they would naturally distinguish which line represents males and females.</p>
+            <p><em>Earnesty Score: 1.5</em></p>
+          </li>
+        </ul>
+        
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="deceptive.png" alt="" width="900"/>
+          <!-- <figcaption>BRIEF CAPTION HERE.</figcaption> -->
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>
+            <p><strong>Y-axis Units -</strong> I changed the y-axis units from the non-deceptive graph to make the deceptive graph flatter and make it look like there is no sharp increase in male complaints as compared to female complaints. To achieve this, I started the y-axis units at 300 and grew by 300, while in the non-deceptive graph, the units started at 200 and increased by 200. By increasing the number of units the deceptive graph grew by, the lines flattened out a little and diluted the graph’s increasing trend.</p>
+            <p><em>Earnesty Score: -1.5</em></p>
+          </li>
+        
+          <li>
+            <p><strong>Data Filtering -</strong> In the graph FOR the proposition, you can see that the line for male complaints increases the steepest from the years of 2000 to 2005. So, I decided to leave those years out and start the x-axis of the graph AGAINST the proposition in 2005 instead of 2000. This cuts out the part of the graph that would show a steep increase, and now the deceptive graph would only show the steady trends of the years post 2005. </p>
+            <p><em>Earnesty Score: -1.5</em></p>
+          </li>
+        
+          <li>
+            <p><strong>Color decisions -</strong> I made both the lines in my line chart different shades of the same color on purpose. I used a dark blue for the line representing males and a lighter blue for females. The purpose of this is to make comparisons between the two lines harder for viewers, and I made them with the same hue to make it seem like they are kind of growing at a similar rate to each other.</p>
+            <p><em>Earnesty Score: -0.5</em></p>
+          </li>
+
+          <li>
+            <p><strong>Slanted Units -</strong> In the deceptive graph, I slanted the x-axis units and the y-axis units. The labels become harder to read with the slant, which makes the graph harder to interpret for viewers. </p>
+            <p><em>Earnesty Score: -0.5</em></p>
+          </li>
+
+        </ul>
+        
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>When it comes to my overall design process, the first step was creating the proposition question. I tried to create a question that would use time-series data because I realized after creating several different types of plots, line charts are easier to create deceptive graphs for as compared to other types of graphs. After formulating my proposition question, I created a persuasive visualization, analyzed the trends, and then crafted my actual proposition. When creating my persuasive visualization, I only picked the range of years that supported my proposition and excluded the rest of the years (ex. 2012-2020 was excluded). The next step I took was then to create the deceptive visualization. I specifically wanted to create a line chart for this project because for the deceptive graph, I had the options to manipulate the x-axis or y-axis scales to exaggerate or flatten trends, zoom to make tiny change look huge, or even adjust line colors and markers to make one group seem more important or extreme than it really is.</p>
+
+<p>During the development of this project, the most straightforward parts included data transformations such as filtering and grouping (for male and female complainants), creating the persuasive graph, and color choices. The difficulties came when trying to craft the deceptive graph. This was especially hard because we had to use the same data to convey the opposite message of the initial proposition, without making the deceptive techniques too obvious. The hardest aspect of the project was trying to find this middle ground and sweet spot that met both goals. After getting over these challenges and creating both graphs, I was surprised by how small design decisions can heavily influence the message a graph sends.</p>
+
+<p>Through this process, I now understand "ethical analysis and visualization" as the responsibility to represent data truthfully, even when trying to emphasize a certain point. Visualizations are rarely neutral, but ethical ones are transparent and preserve the integrity of the story that the data tells. To me, acceptable persuasive choices like clean labeling, smart color use, or reasonable filtering make graphs easier to understand without distorting meaning. Misleading choices, however, include manipulating axes, truncating important context, and misrepresenting the data. After this project, another thing I realized is what draws the line between acceptable vs. misleading design choices: intent. When I was creating my deceptive graph, I intentionally distorted the graph even though I knew what I was doing was not actually the underlying story the data represented. All in all, I saw firsthand how easy it is to cross the line from persuasive into deceptive if ethical rules aren’t followed
+
+      </section>
+    </main>
+  </body>
+</html>
